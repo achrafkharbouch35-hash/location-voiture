@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DriveLux — Location de voitures premium</title>
+    <meta name="description" content="Louez votre voiture premium rapidement et simplement.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= LOADER ================= -->
+
+<div class="loader" id="loader">
+    <div class="loader-logo">DRIVE<span>LUX</span></div>
+    <div class="loader-line">
+        <span></span>
+    </div>
+</div>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header" id="header">
+
+    <a href="#home" class="logo">
+        DRIVE<span>LUX</span>
+    </a>
+
+    <nav class="nav" id="nav">
+        <a href="#home">Accueil</a>
+        <a href="#cars">Nos voitures</a>
+        <a href="#experience">Expérience</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+
+        <button class="icon-btn" id="themeToggle" aria-label="Changer le thème">
+            ◐
+        </button>
+
+        <button class="favorites-btn" id="favoritesButton">
+            ♡
+            <span id="favoritesCount">0</span>
+        </button>
+
+        <a href="#search" class="header-cta">
+            Réserver
+        </a>
+
+        <button class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-background"></div>
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
+
+    <div class="hero-content">
+
+        <div class="eyebrow reveal">
+            <span class="pulse-dot"></span>
+            LOCATION PREMIUM AU MAROC
+        </div>
+
+        <h1 class="reveal">
+            Louez.<br>
+            <span>Conduisez.</span><br>
+            Vivez.
+        </h1>
+
+        <p class="hero-text reveal">
+            Une nouvelle façon de louer votre voiture.
+            Simple, rapide et élégante.
+        </p>
+
+        <div class="hero-buttons reveal">
+            <a href="#search" class="btn btn-primary">
+                Trouver ma voiture
+                <span>→</span>
+            </a>
+
+            <a href="#cars" class="btn btn-outline">
+                Découvrir nos véhicules
+            </a>
+        </div>
+
+        <div class="hero-stats reveal">
+
+            <div>
+                <strong>50+</strong>
+                <span>Véhicules</span>
+            </div>
+
+            <div>
+                <strong>12</strong>
+                <span>Villes</span>
+            </div>
+
+            <div>
+                <strong>4.9/5</strong>
+                <span>Clients</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-car">
+
+        <div class="car-shadow"></div>
+
+        <img
+            src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1800&q=85"
+            alt="Voiture premium"
+        >
+
+    </div>
+
+    <div class="scroll-indicator">
+        <span>SCROLL</span>
+        <div></div>
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-section" id="search">
+
+    <div class="section-heading reveal">
+
+        <span class="section-label">RÉSERVATION</span>
+
+        <h2>
+            Trouvez votre prochaine
+            <span>voiture.</span>
+        </h2>
+
+        <p>
+            Sélectionnez votre destination, vos dates et votre catégorie.
+        </p>
+
+    </div>
+
+
+    <div class="search-box reveal">
+
+        <div class="search-field location-field">
+
+            <span class="field-icon">⌖</span>
+
+            <div>
+                <label>Lieu de récupération</label>
+
+                <select id="location">
+                    <option value="Casablanca">Casablanca</option>
+                    <option value="Marrakech">Marrakech</option>
+                    <option value="Rabat">Rabat</option>
+                    <option value="Fès">Fès</option>
+                    <option value="Agadir">Agadir</option>
+                    <option value="Tanger">Tanger</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <div class="search-field">
+
+            <span class="field-icon">↗</span>
+
+            <div>
+                <label>Date de départ</label>
+                <input type="date" id="startDate">
+            </div>
+
+        </div>
+
+
+        <div class="search-field">
+
+            <span class="field-icon">↙</span>
+
+            <div>
+                <label>Date de retour</label>
+                <input type="date" id="endDate">
+            </div>
+
+        </div>
+
+
+        <div class="search-field">
+
+            <span class="field-icon">◷</span>
+
+            <div>
+                <label>Catégorie</label>
+
+                <select id="category">
+                    <option value="all">Toutes</option>
+                    <option value="economique">Économique</option>
+                    <option value="berline">Berline</option>
+                    <option value="suv">SUV</option>
+                    <option value="luxe">Luxe</option>
+                    <option value="sport">Sport</option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <button class="search-btn" id="searchBtn">
+            <span>Rechercher</span>
+            →
+        </button>
+
+    </div>
+
+
+    <div class="search-result-info">
+
+        <div>
+            <span class="available-dot"></span>
+            <strong id="resultCount">6</strong>
+            véhicules disponibles
+        </div>
+
+        <div class="sort-box">
+            Trier par :
+            <select id="sortSelect">
+                <option value="default">Recommandés</option>
+                <option value="low">Prix croissant</option>
+                <option value="high">Prix décroissant</option>
+            </select>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories">
+
+    <div class="category-title">
+        <span class="section-label">CATÉGORIES</span>
+        <h2>Choisissez votre style.</h2>
+    </div>
+
+    <div class="category-list">
+
+        <button class="category active" data-category="all">
+            <span>✦</span>
+            Toutes
+        </button>
+
+        <button class="category" data-category="economique">
+            <span>◉</span>
+            Économique
+        </button>
+
+        <button class="category" data-category="berline">
+            <span>◇</span>
+            Berline
+        </button>
+
+        <button class="category" data-category="suv">
+            <span>⬡</span>
+            SUV
+        </button>
+
+        <button class="category" data-category="luxe">
+            <span>♢</span>
+            Luxe
+        </button>
+
+        <button class="category" data-category="sport">
+            <span>⚡</span>
+            Sport
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CARS ================= -->
+
+<section class="cars-section" id="cars">
+
+    <div class="section-heading cars-heading reveal">
+
+        <div>
+            <span class="section-label">NOTRE FLOTTE</span>
+
+            <h2>
+                Des voitures qui
+                <span>font la différence.</span>
+            </h2>
+        </div>
+
+        <p>
+            Des véhicules soigneusement sélectionnés
+            pour votre confort et votre plaisir.
+        </p>
+
+    </div>
+
+
+    <div class="cars-grid" id="carsGrid">
+
+        <!-- Les voitures sont générées par JavaScript -->
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="experience" id="experience">
+
+    <div class="experience-image reveal">
+
+        <img
+            src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1800&q=85"
+            alt="Conduite premium"
+        >
+
+        <div class="image-overlay"></div>
+
+        <div class="experience-badge">
+            <strong>01</strong>
+            <span>Une expérience<br>différente.</span>
+        </div>
+
+    </div>
+
+
+    <div class="experience-content reveal">
+
+        <span class="section-label">POURQUOI DRIVELUX</span>
+
+        <h2>
+            Plus qu'une<br>
+            <span>location.</span>
+        </h2>
+
+        <p>
+            Nous pensons que louer une voiture devrait être
+            aussi agréable que la conduire.
+        </p>
+
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">✦</div>
+
+                <div>
+                    <h3>Véhicules premium</h3>
+                    <p>
+                        Une flotte moderne, propre et régulièrement entretenue.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+
+                <div>
+                    <h3>Réservation rapide</h3>
+                    <p>
+                        Trouvez et réservez votre véhicule en quelques minutes.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="feature">
+                <div class="feature-icon">◉</div>
+
+                <div>
+                    <h3>Assistance 24/7</h3>
+                    <p>
+                        Notre équipe reste disponible quand vous en avez besoin.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NUMBERS ================= -->
+
+<section class="numbers">
+
+    <div class="number">
+        <strong data-number="50">0</strong>
+        <span>Véhicules</span>
+    </div>
+
+    <div class="number">
+        <strong data-number="12">0</strong>
+        <span>Villes</span>
+    </div>
+
+    <div class="number">
+        <strong data-number="2500">0</strong>
+        <span>Locations</span>
+    </div>
+
+    <div class="number">
+        <strong data-number="98">0</strong>
+        <span>% satisfaction</span>
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta-section" id="contact">
+
+    <div class="cta-glow"></div>
+
+    <div class="cta-content reveal">
+
+        <span class="section-label">PRÊT À PARTIR ?</span>
+
+        <h2>
+            Votre prochaine<br>
+            <span>aventure commence ici.</span>
+        </h2>
+
+        <p>
+            Choisissez votre voiture et prenez la route.
+        </p>
+
+        <a href="#search" class="btn btn-primary">
+            Réserver maintenant
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <a href="#home" class="logo">
+                DRIVE<span>LUX</span>
+            </a>
+
+            <p>
+                Location de voitures premium.
+                Conduisez votre expérience.
+            </p>
+
+            <div class="socials">
+                <a href="#">IG</a>
+                <a href="#">FB</a>
+                <a href="#">TK</a>
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Navigation</h4>
+
+            <a href="#home">Accueil</a>
+            <a href="#cars">Nos voitures</a>
+            <a href="#experience">Notre expérience</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Catégories</h4>
+
+            <a href="#cars">Économique</a>
+            <a href="#cars">Berline</a>
+            <a href="#cars">SUV</a>
+            <a href="#cars">Luxe</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Contact</h4>
+
+            <a href="tel:+212600000000">
+                +212 6 00 00 00 00
+            </a>
+
+            <a href="mailto:contact@drivelux.ma">
+                contact@drivelux.ma
+            </a>
+
+            <span>Casablanca, Maroc</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>© 2026 DriveLux. Tous droits réservés.</span>
+
+        <div>
+            <a href="#">Confidentialité</a>
+            <a href="#">Conditions</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= FAVORITES PANEL ================= -->
+
+<div class="panel-overlay" id="panelOverlay"></div>
+
+<aside class="favorites-panel" id="favoritesPanel">
+
+    <div class="panel-header">
+
+        <div>
+            <span class="section-label">VOS CHOIX</span>
+            <h3>Favoris</h3>
+        </div>
+
+        <button id="closeFavorites">×</button>
+
+    </div>
+
+    <div id="favoritesContent" class="favorites-content">
+
+        <div class="empty-favorites">
+            <div>♡</div>
+            <p>Aucun véhicule favori.</p>
+            <span>Cliquez sur ♡ sur une voiture pour l'ajouter.</span>
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= BOOKING MODAL ================= -->
+
+<div class="modal-overlay" id="bookingModal">
+
+    <div class="booking-modal">
+
+        <button class="modal-close" id="closeModal">×</button>
+
+        <div class="modal-car-image">
+            <img id="modalCarImage" src="" alt="">
+        </div>
+
+        <div class="modal-content">
+
+            <span class="section-label">RÉSERVATION</span>
+
+            <h2 id="modalCarName">BMW X3</h2>
+
+            <p id="modalCarSpecs">
+                Automatique · 5 places · Diesel
+            </p>
+
+            <div class="booking-summary">
+
+                <div>
+                    <span>Durée</span>
+                    <strong id="modalDays">1 jour</strong>
+                </div>
+
+                <div>
+                    <span>Prix / jour</span>
+                    <strong id="modalDailyPrice">850 DH</strong>
+                </div>
+
+                <div class="total">
+                    <span>Total</span>
+                    <strong id="modalTotal">850 DH</strong>
+                </div>
+
+            </div>
+
+            <button class="whatsapp-btn" id="whatsappBtn">
+                <span>◉</span>
+                Réserver sur WhatsApp
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NOTIFICATION ================= -->
+
+<div class="notification" id="notification">
+
+    <div class="notification-icon">✓</div>
+
+    <div>
+        <strong id="notificationTitle">Ajouté aux favoris</strong>
+        <span id="notificationText">La voiture a été ajoutée.</span>
+    </div>
+
+</div>
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<a
+    class="floating-whatsapp"
+    id="floatingWhatsapp"
+    href="#"
+    target="_blank"
+    aria-label="WhatsApp"
+>
+    ◉
+</a>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
